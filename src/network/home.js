@@ -5,3 +5,13 @@ export  function homeworkdata(){
     url:"/home/multidata"}
     )
 }
+
+export function gethomeshop(type,page){
+  return require({
+    url:"/home/data",
+    params:{
+      type,
+      page,
+    }
+  })
+}

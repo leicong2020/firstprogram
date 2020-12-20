@@ -26,6 +26,7 @@ export default {
   methods:{
     click(index){
       this.content=index
+      this.$emit("clicktabcontral",index)
     }
   }
 };
@@ -38,6 +39,7 @@ export default {
 .tabcontrol div {
   flex: 1;
   height: 40px;
+  line-height:40px;
 }
 .tabcontrol span {
   padding: 5px;
