@@ -1,39 +1,42 @@
 <template>
-  <swiper class="swiper">
-    <swiper-item v-for="(item, index) in getswiperdata" :key="index">
+  <Swiper2 class="swiper" >
+    <div class="swiper-slide" v-for="(item, index) in getswiperdata" :key="index">
       <img :src="item" alt="图片" @load="detailswiperover" />
-    </swiper-item>
-  </swiper>
+    </div>
+  </Swiper2>
 </template>
 <script>
-import { Swiper, SwiperItem} from "components/common/swiper/index.js"
+import Swiper2 from "components/common/swiper/swiper2.vue"
 export default {
   name: "detailswiper",
   data(){
     return{
       test:false,
+      imgover:0
     }
   },
   props: {
     getswiperdata: Array,
   },
   components: {
-    Swiper,
-    SwiperItem,
+    Swiper2
   },
   methods:{
     detailswiperover(){
       if(!this.test){
         this.$emit("detailswiperover")
         this.test=true
+        this.imgover++
       }
     }
   }
 };
 </script>
 <style scoped>
-.swiper{
-  height:300px;
-  overflow:hidden
+.swiper-slide{
+  width:100vw;
+}
+.swiper-slide img{
+  width:100%
 }
 </style>

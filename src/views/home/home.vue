@@ -44,7 +44,7 @@ import bscroll from "components/common/bscroll/bscroll.vue"; //引如滑动组�
 import backtop from "components/common/backtop/backtop.vue"
 
 // 本页面的子组件
-import homeSwiper from "./child_components/home_swiper.vue"; // 引入swiper
+import homeSwiper from "./child_components/home_swiper2.vue"; // 引入swiper
 import recommend from "./child_components/recommend.vue"; // 引入推荐
 import featureview from "./child_components/featureview";
 
@@ -128,7 +128,7 @@ export default {
     */
     homeworkdata() {
       homeworkdata().then((res) => {
-        (this.banner = res.data.banner.list),
+        (this.banner = res.data.banner.list),  
           (this.dKeyword = res.data.dKeyword.list),
           (this.keywords = res.data.keywords.list),
           (this.recommend = res.data.recommend.list);

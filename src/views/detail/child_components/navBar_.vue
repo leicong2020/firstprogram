@@ -34,7 +34,6 @@ export default {
   },
   methods:{
     turncurrent(index){
-      this.current=index
       this.$emit("turncurrent",index)
     },
     back(){

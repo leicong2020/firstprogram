@@ -25,7 +25,7 @@
       ></detailcommen-info>
       <goodsdata :goodsdata="recommends" ref="goodsdata"></goodsdata>
     </scroll>
-    <detailbutton @addCar="addcar"></detailbutton>
+    <detailbutton @addCar="addcar" class="detailbutton"></detailbutton>
     <backtop class="backtop" @click.native="backtop" v-show="backtopshow" />
     <!-- <div v-if="addsuccess" class="success">宝贝已加入购物车</div> -->
     <!-- <toast v-show="addsuccess" :message="messag"></toast> -->
@@ -135,6 +135,7 @@ export default {
     },
     turncurrent(index) {
       this.$refs.scroll.backtop(0, this.turnoffsettop[index]);
+      this.$refs.navbar.current=index;
     },
     scrollto(position) {
       this.backtopshow = position.y < -1500;
@@ -189,12 +190,18 @@ export default {
   position: relative;
   /* top: 49px;
   bottom: 49px; */
-  height: calc(100% - 49px - 49px);
+  height: calc(100% - 49px - 54px);
   overflow: hidden;
 }
 .backtop {
   position: fixed;
   right: 0;
   bottom: 60px;
+}
+.detailbutton{
+  position:fixed;
+  bottom :0px;
+  left:0px;
+  right:0px;
 }
 </style>

@@ -1,7 +1,6 @@
 <template>
   <div id="hy-swiper">
     <div
-      ref="swiper"
       class="swiper"
       @touchstart="touchStart"
       @touchmove="touchMove"
@@ -53,7 +52,7 @@ export default {
       scrolling: false, // 是否正在滚动
     };
   },
-  mounted() {
+  mounted: function () {
     // 1.操作DOM, 在前后添加Slide
     setTimeout(() => {
       this.handleDom();
@@ -130,7 +129,7 @@ export default {
      */
     handleDom: function () {
       // 1.获取要操作的元素
-      let swiperEl = this.$refs.swiper;
+      let swiperEl = document.querySelector(".swiper");
       let slidesEls = swiperEl.getElementsByClassName("slide");
 
       // 2.保存个数

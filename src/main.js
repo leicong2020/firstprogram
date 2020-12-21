@@ -18,6 +18,7 @@ Fastclick.attach(document.body)
 // Vue.use(lazyload,{
 // loading:require(./assets/common/img/)
 // })
+
 new Vue({
   render: h => h(App),
   router,
